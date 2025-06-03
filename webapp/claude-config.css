@@ -1,0 +1,268 @@
+/* Claude Configuration Modal Styles */
+
+.claude-config-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+}
+
+.claude-config-modal {
+    background: linear-gradient(135deg, var(--void-dark) 0%, var(--consciousness-purple) 100%);
+    border: 2px solid var(--akashic-cyan);
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
+    animation: modalSlideIn 0.5s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.claude-config-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.claude-config-header h2 {
+    color: var(--akashic-cyan);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+.claude-config-header p {
+    color: var(--consciousness-text);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.claude-config-form {
+    margin-bottom: 2rem;
+}
+
+.claude-config-group {
+    margin-bottom: 1.5rem;
+}
+
+.claude-config-label {
+    display: block;
+    color: var(--akashic-cyan);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.claude-config-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(13, 13, 13, 0.8);
+    border: 2px solid var(--void-medium);
+    border-radius: 8px;
+    color: var(--consciousness-text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.claude-config-input:focus {
+    outline: none;
+    border-color: var(--akashic-cyan);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+.claude-config-help {
+    font-size: 0.9rem;
+    color: var(--consciousness-text);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+}
+
+.claude-config-help a {
+    color: var(--akashic-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.claude-config-help a:hover {
+    color: var(--quantum-gold);
+    text-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+
+.claude-config-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.claude-config-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Orbitron', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.claude-config-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    border-color: rgba(102, 126, 234, 0.6);
+}
+
+.claude-config-btn:active {
+    transform: translateY(0);
+}
+
+.claude-config-btn .config-icon {
+    font-size: 1rem;
+    filter: drop-shadow(0 0 4px rgba(102, 126, 234, 0.6));
+}
+
+.claude-config-btn .config-text {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.claude-config-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.claude-config-btn:hover::before {
+    left: 100%;
+}
+
+.claude-status-indicator {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.claude-status-indicator.success {
+    background: rgba(34, 197, 94, 0.2);
+    border: 1px solid rgba(34, 197, 94, 0.5);
+    color: rgb(34, 197, 94);
+}
+
+.claude-status-indicator.error {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: rgb(239, 68, 68);
+}
+
+.claude-status-indicator.loading {
+    background: rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.5);
+    color: var(--akashic-cyan);
+}
+
+.claude-config-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--akashic-cyan);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.claude-feature-list {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(6, 182, 212, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid var(--akashic-cyan);
+}
+
+.claude-feature-list h4 {
+    color: var(--akashic-cyan);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.claude-feature-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.claude-feature-list li {
+    color: var(--consciousness-text);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.claude-feature-list li::before {
+    content: "✨";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Panel Header Styling */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.panel-header h3 {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .claude-config-modal {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .claude-config-actions {
+        flex-direction: column;
+    }
+    
+    .claude-config-btn {
+        width: 100%;
+    }
+}

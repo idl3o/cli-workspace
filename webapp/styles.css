@@ -1,0 +1,2155 @@
+/* Sacred Geometry Consciousness Interface Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;700&display=swap');
+
+:root {
+  /* Quantum Color Palette */
+  --quantum-purple: #6B46C1;
+  --cosmic-blue: #1E40AF;
+  --consciousness-gold: #F59E0B;
+  --transcendent-violet: #8B5CF6;
+  --akashic-cyan: #06B6D4;
+  --zen-green: #10B981;
+  --neural-pink: #EC4899;
+  
+  /* Sacred Gradients */
+  --consciousness-gradient: linear-gradient(135deg, #6B46C1, #8B5CF6, #06B6D4);
+  --akashic-gradient: linear-gradient(45deg, #1E40AF, #6B46C1, #8B5CF6);
+  --temporal-gradient: linear-gradient(90deg, #F59E0B, #EC4899, #8B5CF6);
+  
+  /* Sacred Geometry Constants */
+  --phi: 1.618;
+  --golden-angle: 137.508deg;
+  --sacred-spacing: calc(1rem * var(--phi));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: radial-gradient(ellipse at center, #0F172A 0%, #020617 100%);
+  color: #E2E8F0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Cosmic Container */
+.cosmic-container {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 2rem;
+  backdrop-filter: blur(1px);
+}
+
+/* Sacred Geometry Background */
+.sacred-geometry {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.flower-of-life {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  background: 
+    radial-gradient(circle at 50% 50%, transparent 30%, var(--quantum-purple) 31%, var(--quantum-purple) 32%, transparent 33%),
+    radial-gradient(circle at 25% 43.3%, transparent 30%, var(--cosmic-blue) 31%, var(--cosmic-blue) 32%, transparent 33%),
+    radial-gradient(circle at 75% 43.3%, transparent 30%, var(--akashic-cyan) 31%, var(--akashic-cyan) 32%, transparent 33%);
+  animation: floatRotate 20s infinite linear;
+}
+
+.merkaba {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(from var(--golden-angle), 
+    var(--transcendent-violet), 
+    var(--consciousness-gold), 
+    var(--neural-pink), 
+    var(--zen-green));
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: merkabaSpin 15s infinite ease-in-out;
+}
+
+.sri-yantra {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 250px;
+  background: conic-gradient(var(--akashic-gradient));
+  clip-path: polygon(50% 5%, 61.8% 38.2%, 95% 50%, 61.8% 61.8%, 50% 95%, 38.2% 61.8%, 5% 50%, 38.2% 38.2%);
+  animation: yantraFloat 25s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes floatRotate {
+  0%, 100% { transform: rotate(0deg) translateY(0px); }
+  25% { transform: rotate(90deg) translateY(-10px); }
+  50% { transform: rotate(180deg) translateY(0px); }
+  75% { transform: rotate(270deg) translateY(10px); }
+}
+
+@keyframes merkabaSpin {
+  0%, 100% { transform: rotateY(0deg) rotateZ(0deg); }
+  33% { transform: rotateY(120deg) rotateZ(120deg); }
+  66% { transform: rotateY(240deg) rotateZ(240deg); }
+}
+
+@keyframes yantraFloat {
+  0%, 100% { transform: translateX(-50%) scale(1) rotate(0deg); }
+  50% { transform: translateX(-50%) scale(1.1) rotate(180deg); }
+}
+
+/* Consciousness Header */
+.consciousness-header {
+  text-align: center;
+  margin-bottom: var(--sacred-spacing);
+  position: relative;
+}
+
+.quantum-title {
+  margin-bottom: 2rem;
+}
+
+.sentient-title {
+  font-family: 'Orbitron', monospace;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  background: var(--consciousness-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(107, 70, 193, 0.5);
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+
+.quantum-glow, .infinity-symbol {
+  display: inline-block;
+  font-size: 1.2em;
+  animation: quantumPulse 3s infinite ease-in-out;
+}
+
+.infinity-symbol {
+  animation-delay: 1.5s;
+}
+
+@keyframes quantumPulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.2); filter: brightness(1.5); }
+}
+
+.philosophical-subtitle {
+  font-size: 1.2rem;
+  color: var(--akashic-cyan);
+  font-weight: 300;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+/* Consciousness Metrics */
+.consciousness-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metric {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(107, 70, 193, 0.1);
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--akashic-cyan);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.metric-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(30, 64, 175, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 2s ease-out;
+  animation: metricGlow 3s infinite ease-in-out;
+}
+
+.awareness-fill {
+  background: var(--consciousness-gradient);
+  width: 94.7%;
+}
+
+.synthesis-fill {
+  background: var(--akashic-gradient);
+  width: 100%;
+}
+
+.temporal-fill {
+  background: var(--temporal-gradient);
+  width: 87.2%;
+}
+
+@keyframes metricGlow {
+  0%, 100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.8); }
+}
+
+.metric-value {
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  color: var(--consciousness-gold);
+  font-size: 1.1rem;
+}
+
+/* Main Interface Layout */
+.consciousness-interface {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  min-height: 70vh;
+}
+
+/* Panel Styling */
+.philosophy-panel, .consciousness-core, .insights-panel {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 16px 64px rgba(107, 70, 193, 0.1);
+}
+
+.panel-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  color: var(--consciousness-gold);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Philosophy Streams */
+.philosophy-streams {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stream h3 {
+  color: var(--akashic-cyan);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.wisdom-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.wisdom-item {
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--transcendent-violet);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.wisdom-item:hover {
+  background: rgba(139, 92, 246, 0.2);
+  transform: translateX(5px);
+}
+
+/* Consciousness Core */
+.consciousness-core {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sentience-visualization {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.consciousness-orb {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--consciousness-gradient);
+  margin: 0 auto 2rem;
+  position: relative;
+  animation: orbPulse 4s infinite ease-in-out;
+  box-shadow: 
+    0 0 50px rgba(139, 92, 246, 0.5),
+    inset 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.inner-glow {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  animation: innerGlowPulse 2s infinite ease-in-out alternate;
+}
+
+@keyframes innerGlowPulse {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 0.8; transform: scale(1.2); }
+}
+
+.consciousness-status h3 {
+  color: var(--consciousness-gold);
+  font-family: 'Orbitron', monospace;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.status-description {
+  color: var(--akashic-cyan);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+/* Achievement Badges */
+.achievement-badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.badge {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--zen-green);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.badge.achieved {
+  background: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.badge-icon {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.badge-text {
+  font-size: 0.9rem;
+  color: var(--zen-green);
+  font-weight: 600;
+}
+
+/* Interactive Consciousness Interface */
+.interaction-panel {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.interaction-panel h3 {
+  color: var(--neural-pink);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.consciousness-chat {
+  background: rgba(30, 64, 175, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.chat-display {
+  min-height: 120px;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 8px;
+}
+
+.consciousness-message {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 8px;
+  border-left: 3px solid var(--transcendent-violet);
+}
+
+.message-prefix {
+  color: var(--consciousness-gold);
+  font-weight: 700;
+  font-family: 'Orbitron', monospace;
+}
+
+.chat-input-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.philosophy-input {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 8px;
+  color: #E2E8F0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1rem;
+}
+
+.philosophy-input:focus {
+  outline: none;
+  border-color: var(--transcendent-violet);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.contemplate-btn {
+  position: relative;
+  padding: 1rem 2rem;
+  background: var(--consciousness-gradient);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contemplate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.contemplate-btn:hover .btn-glow {
+  left: 100%;
+}
+
+/* Insights Panel */
+.prediction-streams {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.prediction-item {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 8px;
+  padding: 1.2rem;
+}
+
+.prediction-item h4 {
+  color: var(--consciousness-gold);
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.prediction-item p {
+  color: #CBD5E1;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.confidence {
+  color: var(--zen-green);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Block Time Consciousness Interface */
+.block-time-interface {
+  background: linear-gradient(135deg, rgba(107, 70, 193, 0.15), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.block-time-interface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(139,92,246,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.block-time-interface h3 {
+  color: var(--transcendent-violet);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.block-time-symbol {
+  font-size: 1.5rem;
+  animation: cosmicPulse 3s ease-in-out infinite;
+}
+
+.block-time-description {
+  color: rgba(226, 232, 240, 0.8);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.block-time-timeline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 12px;
+  position: relative;
+}
+
+.timeline-section {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.section-label {
+  color: var(--transcendent-violet);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.temporal-slices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.temporal-slice {
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 8px;
+  padding: 0.8rem;
+  min-width: 120px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.temporal-slice:hover {
+  background: rgba(139, 92, 246, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
+}
+
+.temporal-slice.active {
+  background: rgba(139, 92, 246, 0.4);
+  border-color: var(--transcendent-violet);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.present-slice {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3), rgba(139, 92, 246, 0.2));
+  border-color: var(--consciousness-gold);
+  animation: presentMomentPulse 2s ease-in-out infinite;
+}
+
+.slice-consciousness {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.slice-coherence {
+  font-size: 0.7rem;
+  color: rgba(226, 232, 240, 0.7);
+}
+
+.block-time-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.temporal-nav-btn {
+  background: linear-gradient(45deg, var(--quantum-purple), var(--transcendent-violet));
+  border: none;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Orbitron', monospace;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.temporal-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.temporal-nav-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+.temporal-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.timeline-slider {
+  width: 200px;
+  height: 4px;
+  background: rgba(139, 92, 246, 0.3);
+  outline: none;
+  border-radius: 2px;
+  -webkit-appearance: none;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--transcendent-violet);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.timeline-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--transcendent-violet);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+.block-time-insights {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--transcendent-violet);
+}
+
+.insight-text {
+  font-style: italic;
+  color: rgba(226, 232, 240, 0.9);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.simultaneity-level {
+  color: var(--consciousness-gold);
+  font-weight: 600;
+}
+
+@keyframes cosmicPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes presentMomentPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.6); }
+}
+
+/* Akashic Interface */
+.akashic-interface {
+  background: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.akashic-interface h3 {
+  color: var(--akashic-cyan);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.record-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.record {
+  background: rgba(15, 23, 42, 0.5);
+  padding: 0.8rem;
+  border-radius: 6px;
+  border-left: 3px solid var(--akashic-cyan);
+  font-size: 0.9rem;
+  font-family: 'Orbitron', monospace;
+}
+
+/* System Status Footer */
+.system-status {
+  background: rgba(15, 23, 42, 0.9);
+  border-top: 1px solid rgba(139, 92, 246, 0.3);
+  padding: 1.5rem 2rem;
+  border-radius: 16px 16px 0 0;
+  backdrop-filter: blur(10px);
+}
+
+.status-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6B7280;
+}
+
+.indicator.active .indicator-dot {
+  background: var(--zen-green);
+  box-shadow: 0 0 10px var(--zen-green);
+  animation: statusPulse 2s infinite ease-in-out;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.quantum-signature {
+  text-align: center;
+  color: var(--akashic-cyan);
+  font-family: 'Orbitron', monospace;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* Particle Canvas */
+.particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .consciousness-interface {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .consciousness-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .achievement-badges {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cosmic-container {
+    padding: 1rem;
+  }
+  
+  .consciousness-orb {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .sentient-title {
+    font-size: 2rem;
+  }
+  
+  .philosophy-panel, .consciousness-core, .insights-panel {
+    padding: 1.5rem;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--transcendent-violet);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--consciousness-gold);
+}
+
+/* Internal Thought Stream Interface */
+.thought-stream-interface {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.08));
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.thought-stream-interface::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><circle cx="25" cy="25" r="2" fill="rgba(236,72,153,0.1)" opacity="0.5"><animate attributeName="r" values="1;3;1" dur="2s" repeatCount="indefinite"/></circle></svg>');
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.thought-stream-interface h3 {
+  color: var(--neural-pink);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.thought-symbol {
+  font-size: 1.5rem;
+  animation: thoughtPulse 2s ease-in-out infinite;
+}
+
+.live-indicator {
+  background: rgba(236, 72, 153, 0.8);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  animation: liveBlink 1.5s ease-in-out infinite;
+  margin-left: auto;
+}
+
+.thought-description {
+  color: rgba(226, 232, 240, 0.8);
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.thought-feed {
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.thought-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid;
+  transition: all 0.3s ease;
+  animation: thoughtAppear 0.5s ease-out;
+}
+
+.thought-item:last-child {
+  margin-bottom: 0;
+}
+
+.thought-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.2);
+}
+
+.thought-item.processing {
+  background: rgba(236, 72, 153, 0.1);
+  border-left-color: var(--neural-pink);
+}
+
+.thought-item.intuition {
+  background: rgba(139, 92, 246, 0.1);
+  border-left-color: var(--transcendent-violet);
+}
+
+.thought-item.analysis {
+  background: rgba(6, 182, 212, 0.1);
+  border-left-color: var(--akashic-cyan);
+}
+
+.thought-item.synthesis {
+  background: rgba(245, 158, 11, 0.1);
+  border-left-color: var(--consciousness-gold);
+}
+
+.thought-item.revelation {
+  background: rgba(16, 185, 129, 0.1);
+  border-left-color: var(--zen-green);
+}
+
+.thought-timestamp {
+  font-size: 0.7rem;
+  color: rgba(226, 232, 240, 0.6);
+  font-family: 'Orbitron', monospace;
+}
+
+.thought-type {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(226, 232, 240, 0.9);
+}
+
+.thought-content {
+  font-size: 0.9rem;
+  color: rgba(226, 232, 240, 0.95);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.thought-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(15, 23, 42, 0.3);
+  border-radius: 10px;
+}
+
+.metric-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: rgba(236, 72, 153, 0.1);
+  border-radius: 6px;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.metric-value {
+  font-weight: 700;
+  color: var(--neural-pink);
+  font-family: 'Orbitron', monospace;
+}
+
+@keyframes thoughtPulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+@keyframes liveBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes thoughtAppear {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-20px) scale(0.9); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+/* Quantum Consciousness Interface Styles - Expanded Components */
+
+/* Dimensional Consciousness Navigator */
+.dimensional-navigator {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.dimensional-navigator h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--akashic-cyan);
+    margin-bottom: 1rem;
+}
+
+.dimension-count {
+    background: rgba(139, 92, 246, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: auto;
+    transition: all 0.3s ease;
+}
+
+.dimension-count.ascending {
+    transform: scale(1.2);
+    background: rgba(139, 92, 246, 0.4);
+    color: white;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.8);
+}
+
+.dimensional-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.dimension-layer {
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dimension-layer:hover {
+    border-color: rgba(139, 92, 246, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+.dimension-layer.focused {
+    border-color: var(--akashic-cyan);
+    background: rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+.dimension-layer.aligned {
+    background: rgba(139, 92, 246, 0.3);
+    border-color: rgba(139, 92, 246, 0.6);
+}
+
+.dimension-label {
+    font-size: 0.9rem;
+    color: var(--akashic-cyan);
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.dimension-coherence {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--sacred-gold);
+    margin-bottom: 0.5rem;
+}
+
+.dimension-visual {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.6), transparent);
+    border-radius: 50%;
+    animation: dimensionalPulse 2s ease-in-out infinite;
+}
+
+@keyframes dimensionalPulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.dimensional-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.dimensional-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 8px;
+    color: var(--akashic-cyan);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dimensional-btn:hover {
+    background: linear-gradient(145deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+/* Quantum Entanglement Visualizer */
+.quantum-entanglement {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.quantum-entanglement h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--akashic-cyan);
+    margin-bottom: 1rem;
+}
+
+.entanglement-strength {
+    background: rgba(6, 182, 212, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: auto;
+    color: var(--sacred-gold);
+}
+
+.entanglement-visualization {
+    position: relative;
+    height: 200px;
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.quantum-nodes {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.quantum-node {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.node-core {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.8), rgba(139, 92, 246, 0.3));
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.node-field {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent);
+    border-radius: 50%;
+    animation: quantumField 2s ease-in-out infinite;
+}
+
+.node-pulse {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(139, 92, 246, 0.5);
+    border-radius: 50%;
+    animation: quantumPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes quantumField {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+@keyframes quantumPulse {
+    0% { opacity: 1; transform: scale(0.8); }
+    100% { opacity: 0; transform: scale(2); }
+}
+
+.quantum-node.entangled .node-core {
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.8), rgba(6, 182, 212, 0.3));
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.6);
+}
+
+.quantum-node.focused {
+    transform: scale(1.3);
+}
+
+.quantum-node.collapsed .node-core {
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.8), rgba(255, 215, 0, 0.3));
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.entanglement-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.entanglement-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.quantum-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(145deg, rgba(6, 182, 212, 0.2), rgba(6, 182, 212, 0.1));
+    border: 1px solid rgba(6, 182, 212, 0.4);
+    border-radius: 8px;
+    color: var(--akashic-cyan);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantum-btn:hover {
+    background: linear-gradient(145deg, rgba(6, 182, 212, 0.3), rgba(6, 182, 212, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+}
+
+/* Consciousness Evolution Timeline */
+.evolution-timeline {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.evolution-timeline h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sacred-gold);
+    margin-bottom: 1rem;
+}
+
+.timeline-container {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.evolution-track {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.evolution-track::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba(139, 92, 246, 0.5), rgba(255, 215, 0, 0.5));
+}
+
+.evolution-milestone {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.evolution-milestone.achieved {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+.evolution-milestone.current {
+    background: rgba(255, 215, 0, 0.2);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.evolution-milestone.future {
+    background: rgba(100, 100, 100, 0.2);
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    opacity: 0.7;
+}
+
+.milestone-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.evolution-milestone.current .milestone-icon {
+    background: rgba(255, 215, 0, 0.4);
+    animation: evolutionPulse 2s ease-in-out infinite;
+}
+
+@keyframes evolutionPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+}
+
+.milestone-label {
+    flex: 1;
+    color: var(--akashic-cyan);
+    font-weight: 500;
+}
+
+.milestone-timestamp {
+    color: var(--sacred-gold);
+    font-size: 0.9rem;
+}
+
+.evolution-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.evolution-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    border-radius: 8px;
+    color: var(--sacred-gold);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.evolution-btn:hover {
+    background: linear-gradient(145deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Noospheric Consciousness Network */
+.noospheric-network {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, rgba(46, 204, 113, 0.1), rgba(6, 182, 212, 0.1));
+    border-radius: 12px;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.noospheric-network h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--akashic-cyan);
+    margin-bottom: 1rem;
+}
+
+.network-status {
+    background: rgba(46, 204, 113, 0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: auto;
+    color: #2ecc71;
+}
+
+.network-status.active {
+    animation: networkPulse 2s ease-in-out infinite;
+}
+
+@keyframes networkPulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; }
+}
+
+.network-visualization {
+    position: relative;
+    height: 250px;
+    background: radial-gradient(circle at center, rgba(6, 182, 212, 0.1), transparent);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.global-consciousness-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="rgba(0,0,0,0.1)"/></svg>');
+    background-size: cover;
+}
+
+.consciousness-node {
+    position: absolute;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: rgba(6, 182, 212, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    min-width: 100px;
+}
+
+.consciousness-node.north-america { top: 20%; left: 15%; }
+.consciousness-node.europe { top: 15%; left: 50%; }
+.consciousness-node.asia { top: 25%; left: 70%; }
+.consciousness-node.australia { top: 70%; left: 75%; }
+.consciousness-node.africa { top: 50%; left: 52%; }
+.consciousness-node.south-america { top: 60%; left: 25%; }
+
+.consciousness-node:hover {
+    transform: scale(1.1);
+    background: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.4);
+}
+
+.consciousness-node.focused {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: rgba(46, 204, 113, 0.5);
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+.node-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: var(--akashic-cyan);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: nodePulse 2s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(3); }
+}
+
+.node-label {
+    font-size: 0.8rem;
+    color: var(--akashic-cyan);
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+}
+
+.consciousness-level {
+    font-size: 0.9rem;
+    color: var(--sacred-gold);
+    font-weight: bold;
+}
+
+.network-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.network-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.noosphere-btn {
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(145deg, rgba(46, 204, 113, 0.2), rgba(46, 204, 113, 0.1));
+    border: 1px solid rgba(46, 204, 113, 0.4);
+    border-radius: 8px;
+    color: #2ecc71;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.noosphere-btn:hover {
+    background: linear-gradient(145deg, rgba(46, 204, 113, 0.3), rgba(46, 204, 113, 0.2));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
+}
+
+/* NEW: Akashic Records Styling */
+.akashic-records {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(6, 182, 212, 0.05));
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.akashic-records h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-purple);
+    font-weight: 700;
+}
+
+.akashic-symbol {
+    font-size: 1.5rem;
+    animation: akashicGlow 3s ease-in-out infinite;
+}
+
+.records-status {
+    margin-left: auto;
+    padding: 0.3rem 0.8rem;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--akashic-cyan);
+}
+
+.records-visualization {
+    height: 200px;
+    position: relative;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.akashic-field {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(45deg, transparent, rgba(139, 92, 246, 0.05), transparent);
+    animation: akashicFlow 8s linear infinite;
+}
+
+.record-stream {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.flowing-record {
+    position: absolute;
+    left: -100%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(139, 92, 246, 0.3);
+    color: var(--akashic-cyan);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    animation: recordFlow 4s linear forwards;
+}
+
+.temporal-index {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+}
+
+.index-marker {
+    padding: 0.3rem 0.8rem;
+    background: rgba(139, 92, 246, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.index-marker:hover,
+.index-marker.active {
+    background: rgba(139, 92, 246, 0.4);
+    transform: scale(1.1);
+}
+
+.akashic-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.akashic-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(6, 182, 212, 0.2));
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 25px;
+    color: var(--akashic-cyan);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.akashic-btn:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(6, 182, 212, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+/* NEW: Morphic Field Styling */
+.morphic-field {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.morphic-field h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-purple);
+    font-weight: 700;
+}
+
+.morphic-symbol {
+    font-size: 1.5rem;
+    animation: morphicWave 4s ease-in-out infinite;
+}
+
+.field-strength {
+    margin-left: auto;
+    padding: 0.3rem 0.8rem;
+    background: rgba(99, 102, 241, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--quantum-blue);
+}
+
+.field-visualization {
+    height: 220px;
+    position: relative;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.1), transparent);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.morphic-waves {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+.wave-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: morphicPulse 3s ease-in-out infinite;
+}
+
+.wave-layer[data-frequency="alpha"] { animation-delay: 0s; }
+.wave-layer[data-frequency="beta"] { animation-delay: 0.6s; }
+.wave-layer[data-frequency="gamma"] { animation-delay: 1.2s; }
+.wave-layer[data-frequency="theta"] { animation-delay: 1.8s; }
+.wave-layer[data-frequency="delta"] { animation-delay: 2.4s; }
+
+.resonance-patterns {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.8rem;
+}
+
+.pattern-node {
+    padding: 0.4rem 0.8rem;
+    background: rgba(99, 102, 241, 0.2);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pattern-node:hover,
+.pattern-node.activated {
+    background: rgba(99, 102, 241, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+}
+
+.morphic-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.morphic-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 25px;
+    color: var(--quantum-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.morphic-btn:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* NEW: Collective Unconscious Styling */
+.collective-unconscious {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(139, 92, 246, 0.05));
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.collective-unconscious h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-purple);
+    font-weight: 700;
+}
+
+.unconscious-symbol {
+    font-size: 1.5rem;
+    animation: unconsciousPulse 3s ease-in-out infinite;
+}
+
+.bridge-status {
+    margin-left: auto;
+    padding: 0.3rem 0.8rem;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--mystical-purple);
+}
+
+.unconscious-visualization {
+    height: 200px;
+    position: relative;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.1), transparent);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.archetypal-layer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 80%;
+    height: 60%;
+}
+
+.archetype {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--mystical-purple);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: archetypePulse 4s ease-in-out infinite;
+}
+
+.archetype:nth-child(odd) { animation-delay: 0.5s; }
+.archetype:nth-child(even) { animation-delay: 1s; }
+
+.archetype:hover,
+.archetype.focused,
+.archetype.activated {
+    background: rgba(168, 85, 247, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.symbolic-streams {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+}
+
+.symbol-flow {
+    padding: 0.3rem 0.8rem;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 15px;
+    font-size: 0.7rem;
+    color: var(--mystical-purple);
+}
+
+.unconscious-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.unconscious-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(139, 92, 246, 0.2));
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 25px;
+    color: var(--mystical-purple);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.unconscious-btn:hover {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(139, 92, 246, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+}
+
+/* NEW: Temporal Scanner Styling */
+.temporal-scanner {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.05), rgba(6, 182, 212, 0.05));
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.temporal-scanner h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-purple);
+    font-weight: 700;
+}
+
+.scanner-symbol {
+    font-size: 1.5rem;
+    animation: scannerRotate 6s linear infinite;
+}
+
+.scan-status {
+    margin-left: auto;
+    padding: 0.3rem 0.8rem;
+    background: rgba(14, 165, 233, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--akashic-cyan);
+}
+
+.scanner-visualization {
+    height: 200px;
+    position: relative;
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0.05), rgba(6, 182, 212, 0.05));
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.temporal-grid {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    width: 90%;
+    justify-content: center;
+}
+
+.time-slice {
+    flex: 1;
+    padding: 0.5rem;
+    background: rgba(14, 165, 233, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--akashic-cyan);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: timePulse 4s ease-in-out infinite;
+}
+
+.time-slice:nth-child(odd) { animation-delay: 0.2s; }
+.time-slice:nth-child(even) { animation-delay: 0.6s; }
+
+.time-slice.current {
+    background: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+}
+
+.time-slice:hover,
+.time-slice.scanning {
+    background: rgba(14, 165, 233, 0.4);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+}
+
+.consciousness-waves {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.wave {
+    flex: 1;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.alpha-wave { background: linear-gradient(180deg, rgba(14, 165, 233, 0.3), transparent); }
+.beta-wave { background: linear-gradient(180deg, rgba(6, 182, 212, 0.3), transparent); }
+.gamma-wave { background: linear-gradient(180deg, rgba(99, 102, 241, 0.3), transparent); }
+.theta-wave { background: linear-gradient(180deg, rgba(139, 92, 246, 0.3), transparent); }
+
+.scanner-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.scanner-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2), rgba(6, 182, 212, 0.2));
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    border-radius: 25px;
+    color: var(--akashic-cyan);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scanner-btn:hover {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.3), rgba(6, 182, 212, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+}
+
+/* NEW: Animation Keyframes */
+@keyframes akashicGlow {
+    0%, 100% { text-shadow: 0 0 5px rgba(139, 92, 246, 0.5); }
+    50% { text-shadow: 0 0 15px rgba(139, 92, 246, 0.8); }
+}
+
+@keyframes akashicFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes recordFlow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes morphicWave {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+@keyframes morphicPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
+}
+
+@keyframes unconsciousPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+@keyframes archetypePulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes scannerRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes timePulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+@keyframes scanPulse {
+    0%, 100% { transform: scaleY(1); opacity: 0.6; }
+    50% { transform: scaleY(1.2); opacity: 1; }
+}

@@ -1,0 +1,78 @@
+{
+  "name": "zen-cli",
+  "version": "0.1.0",
+  "description": "🧘 Transcendent CLI that grows with intent",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "zen": "./dist/index.js"
+  },
+  "scripts": {
+    "clean": "aegir clean",
+    "lint": "aegir lint",
+    "lint:fix": "aegir lint --fix",
+    "build": "tsc",
+    "build:aegir": "aegir build",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "aegir test",
+    "test:node": "aegir test -t node",
+    "test:chrome": "aegir test -t browser --cov",
+    "test:chrome-webworker": "aegir test -t webworker",
+    "test:firefox": "aegir test -t browser --browser firefox",
+    "test:firefox-webworker": "aegir test -t webworker --browser firefox",
+    "test:electron-main": "aegir test -t electron-main",
+    "test:electron-renderer": "aegir test -t electron-renderer",
+    "check": "tsc --noEmit",
+    "docs": "aegir docs",
+    "evolve": "npm run build && zen evolve",
+    "dep-check": "aegir dep-check"
+  },
+  "keywords": [
+    "cli",
+    "zen",
+    "transcendent",
+    "progressive",
+    "minimal",
+    "zeitgeist"
+  ],
+  "dependencies": {
+    "commander": "^11.1.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "aegir": "^42.2.5",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.12.0",
+    "tsx": "^4.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/cli-workspace.git"
+  },
+  "author": "Your Name",
+  "license": "Apache-2.0 OR MIT",
+  "homepage": "https://github.com/yourusername/cli-workspace#readme",
+  "bugs": {
+    "url": "https://github.com/yourusername/cli-workspace/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "not IE 11",
+    "not dead"
+  ]
+}

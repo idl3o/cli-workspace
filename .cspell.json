@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "aegir",
+    "transcendent", 
+    "zeitgeist",
+    "evolve",
+    "beforeEach",
+    "afterEach",
+    "stubInterface",
+    "blockstore",
+    "datastore",
+    "unixfs",
+    "libp2p",
+    "ipfs",
+    "helia",
+    "cids",
+    "multihash",
+    "multiformat",
+    "chai",
+    "mocha",
+    "tsbuildinfo",
+    "tsconfig",
+    "browserslist",
+    "zenjs"
+  ],
+  "flagWords": [],
+  "allowCompoundWords": true,
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "coverage/**",
+    "*.log",
+    "*.d.ts",
+    "package-lock.json",
+    "yarn.lock",
+    "pnpm-lock.yaml",
+    "LICENSE*"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.{ts,js,json}",
+      "caseSensitive": false
+    }
+  ]
+}
