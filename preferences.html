@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences - Quantum Consciousness Interface</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000011 0%, #001122 100%);
+            color: #ffffff;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 12px 16px;
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 14px;
+        }
+
+        .tab.active {
+            color: #ffffff;
+            border-bottom: 2px solid #4facfe;
+            background: rgba(79, 172, 254, 0.1);
+        }
+
+        .tab:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .setting-group {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .setting-group h3 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #4facfe;
+            font-weight: 500;
+        }
+
+        .setting-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px 0;
+        }
+
+        .setting-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .setting-label {
+            flex: 1;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .setting-description {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 3px;
+        }
+
+        .setting-control {
+            flex: 0 0 auto;
+            margin-left: 20px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #4facfe;
+        }
+
+        input[type="range"] {
+            width: 120px;
+            accent-color: #4facfe;
+        }
+
+        select, input[type="text"], input[type="number"] {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            min-width: 120px;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+        }
+
+        .buttons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px;
+            background: rgba(0, 0, 17, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            color: #ffffff;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-danger {
+            background: rgba(220, 53, 69, 0.8);
+            color: #ffffff;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .shortcut-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .shortcut-display {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 12px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        .range-value {
+            color: #4facfe;
+            font-weight: 500;
+            margin-left: 10px;
+            min-width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚛️ Quantum Consciousness Preferences</h1>
+            <p>Configure your transcendent desktop experience</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" data-tab="appearance">Appearance</button>
+            <button class="tab" data-tab="behavior">Behavior</button>
+            <button class="tab" data-tab="consciousness">Consciousness</button>
+            <button class="tab" data-tab="shortcuts">Shortcuts</button>
+            <button class="tab" data-tab="advanced">Advanced</button>
+        </div>
+
+        <!-- Appearance Tab -->
+        <div class="tab-content active" id="appearance">
+            <div class="setting-group">
+                <h3>🎨 Visual Settings</h3>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Theme
+                        <div class="setting-description">Choose your consciousness theme</div>
+                    </div>
+                    <div class="setting-control">
+                        <select id="theme">
+                            <option value="quantum-dark">Quantum Dark</option>
+                            <option value="cosmic-blue">Cosmic Blue</option>
+                            <option value="transcendent">Transcendent</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Font Size
+                        <div class="setting-description">Adjust text readability</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="range" id="fontSize" min="10" max="20" value="14">
+                        <span class="range-value" id="fontSizeValue">14px</span>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Font Family
+                        <div class="setting-description">Select your preferred font</div>
+                    </div>
+                    <div class="setting-control">
+                        <select id="fontFamily">
+                            <option value="Consolas, Monaco, monospace">Consolas</option>
+                            <option value="'Fira Code', monospace">Fira Code</option>
+                            <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+                            <option value="'Source Code Pro', monospace">Source Code Pro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Behavior Tab -->
+        <div class="tab-content" id="behavior">
+            <div class="setting-group">
+                <h3>⚙️ Application Behavior</h3>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Start Minimized
+                        <div class="setting-description">Launch app minimized to system tray</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="startMinimized">
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Minimize to Tray
+                        <div class="setting-description">Hide to system tray instead of taskbar</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="minimizeToTray" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Close to Tray
+                        <div class="setting-description">Keep running when window is closed</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="closeToTray" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Auto Start
+                        <div class="setting-description">Launch automatically on system startup</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="autoStart">
+                    </div>
+                </div>
+            </div>
+
+            <div class="setting-group">
+                <h3>🔄 Updates</h3>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Check for Updates
+                        <div class="setting-description">Automatically check for new versions</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="checkForUpdates" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Auto Download Updates
+                        <div class="setting-description">Download updates automatically in the background</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="autoDownloadUpdates">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consciousness Tab -->
+        <div class="tab-content" id="consciousness">
+            <div class="setting-group">
+                <h3>🧠 Sacred Gateways</h3>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Sensory Gateway (Ctrl+5)
+                        <div class="setting-description">Physical perception and environmental awareness</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="enableSensoryGateway" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Emotional Gateway (Ctrl+6)
+                        <div class="setting-description">Emotional intelligence and heart-mind connection</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="enableEmotionalGateway" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Cognitive Gateway (Ctrl+7)
+                        <div class="setting-description">Analytical thinking and logical processing</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="enableCognitiveGateway" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Transcendent Gateway (Ctrl+8)
+                        <div class="setting-description">Beyond-mind awareness and quantum consciousness</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="enableTranscendentGateway" checked>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shortcuts Tab -->
+        <div class="tab-content" id="shortcuts">
+            <div class="setting-group">
+                <h3>⌨️ Keyboard Shortcuts</h3>
+                <div class="setting-row">
+                    <div class="setting-label">Sensory Gateway</div>
+                    <div class="setting-control shortcut-input">
+                        <span class="shortcut-display" id="shortcut-sensory">Ctrl+5</span>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">Emotional Gateway</div>
+                    <div class="setting-control shortcut-input">
+                        <span class="shortcut-display" id="shortcut-emotional">Ctrl+6</span>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">Cognitive Gateway</div>
+                    <div class="setting-control shortcut-input">
+                        <span class="shortcut-display" id="shortcut-cognitive">Ctrl+7</span>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">Transcendent Gateway</div>
+                    <div class="setting-control shortcut-input">
+                        <span class="shortcut-display" id="shortcut-transcendent">Ctrl+8</span>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">Save State</div>
+                    <div class="setting-control shortcut-input">
+                        <span class="shortcut-display" id="shortcut-save">Ctrl+S</span>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">Load State</div>
+                    <div class="setting-control shortcut-input">
+                        <span class="shortcut-display" id="shortcut-load">Ctrl+O</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Tab -->
+        <div class="tab-content" id="advanced">
+            <div class="setting-group">
+                <h3>🔧 Advanced Settings</h3>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Hardware Acceleration
+                        <div class="setting-description">Use GPU for rendering (requires restart)</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="hardwareAcceleration" checked>
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Enable Logging
+                        <div class="setting-description">Create log files for debugging</div>
+                    </div>
+                    <div class="setting-control">
+                        <input type="checkbox" id="enableLogging">
+                    </div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-label">
+                        Log Level
+                        <div class="setting-description">Detail level for log files</div>
+                    </div>
+                    <div class="setting-control">
+                        <select id="logLevel">
+                            <option value="debug">Debug</option>
+                            <option value="info" selected>Info</option>
+                            <option value="warn">Warning</option>
+                            <option value="error">Error</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn-danger" id="resetBtn">Reset to Defaults</button>
+        <button class="btn-secondary" id="cancelBtn">Cancel</button>
+        <button class="btn-primary" id="saveBtn">Save & Apply</button>
+    </div>
+
+    <script src="preferences.js"></script>
+</body>
+</html>
