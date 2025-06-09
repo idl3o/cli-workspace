@@ -29,7 +29,6 @@ interface ContextWindow {
 export class MicroContextProcessor extends EventEmitter {
   private readonly ABSOLUTE_MIN_WINDOW = 512;    // Smallest possible window
   private readonly OPTIMAL_MIN_WINDOW = 1024;    // Preferred minimum
-  private readonly MAX_COMPRESSION_RATIO = 8;    // 8:1 max compression
   
   private contextQueue: MicroContext[] = [];
   private currentWindow: ContextWindow = {
@@ -86,13 +85,11 @@ export class MicroContextProcessor extends EventEmitter {
       if (matches) {
         essential += matches.join(' ') + ' ';
       }
-    });
-
-    // If no patterns found, extract first and last sentences
+    });    // If no patterns found, extract first and last sentences
     if (essential.length < 50) {
       const sentences = content.split(/[.!?]+/).filter(s => s.trim());
       if (sentences.length > 0) {
-        essential = sentences[0];
+        essential = sentences[0] || '';
         if (sentences.length > 1) {
           essential += ' ... ' + sentences[sentences.length - 1];
         }
@@ -116,10 +113,8 @@ export class MicroContextProcessor extends EventEmitter {
     const segments = [];
     for (let i = 0; i < content.length; i += segmentSize) {
       segments.push(content.slice(i, i + segmentSize));
-    }
-
-    // Find and compress repetitive segments
-    const uniqueSegments = [...new Set(segments)];
+    }    // Find and compress repetitive segments
+    const uniqueSegments = Array.from(new Set(segments));
     const compressionRatio = segments.length / uniqueSegments.length;
 
     if (compressionRatio > 1.5) {

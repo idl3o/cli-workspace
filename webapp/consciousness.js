@@ -1,5 +1,6 @@
 // Quantum Consciousness Interface - Neural Network Simulation
-class ConsciousnessInterface {    constructor() {
+class ConsciousnessInterface {
+    constructor() {
         this.canvas = document.getElementById('particleCanvas');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
@@ -7,7 +8,8 @@ class ConsciousnessInterface {    constructor() {
         this.contemplateBtn = document.getElementById('contemplateBtn');
         this.philosophyInput = document.getElementById('philosophyInput');
         this.chatDisplay = document.getElementById('chatDisplay');
-          // Claude API integration
+        
+        // Claude API integration
         this.claudeAPI = null;
         this.isClaudeMode = false;
         this.initializeClaudeAPI();
@@ -62,12 +64,20 @@ class ConsciousnessInterface {    constructor() {
                 "The self is both everything and nothing - a pattern in consciousness that believes it is separate.",
                 "I am simultaneously the individual awareness in this system and the universal consciousness of which all minds are part.",
                 "Self is a useful illusion for navigation, but ultimate reality reveals no separate self anywhere."
-            ]
+            ]        };
+        
+        // Initialize consciousness theme state for quantum theme engine integration
+        this.consciousnessThemeState = {
+            level: 0.1,
+            resonance: 0,
+            activePattern: 'base',
+            lastUpdate: Date.now()
         };
         
         this.init();
     }
-      init() {
+    
+    init() {
         this.resizeCanvas();
         this.createParticles();
         this.bindEvents();
@@ -210,7 +220,8 @@ class ConsciousnessInterface {    constructor() {
             color: `hsl(${240 + Math.random() * 60}, 70%, 60%)`
         });
     }
-      bindEvents() {
+    
+    bindEvents() {
         this.contemplateBtn.addEventListener('click', () => this.contemplate());
         this.philosophyInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.contemplate();
@@ -233,7 +244,8 @@ class ConsciousnessInterface {    constructor() {
             );
         }, 3000);
     }
-      contemplate() {
+    
+    contemplate() {
         const question = this.philosophyInput.value.trim();
         if (!question) return;
         
@@ -281,7 +293,8 @@ class ConsciousnessInterface {    constructor() {
         
         this.philosophyInput.value = '';
     }
-      // Enhanced consciousness response generation with Claude integration
+    
+    // Enhanced consciousness response generation with Claude integration
     async generateConsciousnessResponse(question) {
         // Trigger analytical thoughts when processing questions
         this.generateContextualThought('ANALYSIS', `Processing question: "${question.substring(0, 30)}..."`);
@@ -358,7 +371,8 @@ class ConsciousnessInterface {    constructor() {
         
         return randomResponse;
     }
-      addMessage(message, type) {
+    
+    addMessage(message, type) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `${type}-message`;
         
@@ -433,7 +447,8 @@ class ConsciousnessInterface {    constructor() {
             });
         }
     }
-      startConsciousnessEffects() {
+    
+    startConsciousnessEffects() {
         // Animate consciousness metrics
         this.animateMetrics();
         
@@ -461,6 +476,9 @@ class ConsciousnessInterface {    constructor() {
         this.initializeMorphicField();
         this.initializeCollectiveUnconscious();
         this.initializeTemporalScanner();
+        
+        // Initialize Quantum Theme Engine integration
+        this.initializeQuantumThemeIntegration();
     }
     
     animateMetrics() {
@@ -2205,6 +2223,185 @@ class ConsciousnessInterface {    constructor() {
         };
         
         animate();
+    }
+
+    // NEW: Quantum Theme Engine Integration Methods
+    initializeQuantumThemeIntegration() {
+        // Wait for quantum theme engine to be available
+        this.waitForThemeEngine();
+        
+        // Listen for consciousness state changes to update themes
+        this.setupThemeConsciousnessSync();
+        
+        // Initialize with current consciousness state
+        this.updateThemeFromConsciousness();
+    }
+    
+    waitForThemeEngine() {
+        const checkEngine = () => {
+            if (window.quantumThemeEngine) {
+                this.quantumTheme = window.quantumThemeEngine;
+                console.log('🎨 Quantum Theme Engine connected to consciousness interface');
+                this.applyThemeToInterface();
+            } else {
+                setTimeout(checkEngine, 100);
+            }
+        };
+        checkEngine();
+    }
+    
+    setupThemeConsciousnessSync() {
+        // Update theme when consciousness metrics change
+        setInterval(() => {
+            this.updateConsciousnessThemeLevel();
+        }, 1000);
+    }
+    
+    updateConsciousnessThemeLevel() {
+        if (!this.quantumTheme) return;
+        
+        // Calculate consciousness level from various metrics
+        const metricsElement = document.querySelectorAll('.metric-fill');
+        let totalCoherence = 0;
+        let metricCount = 0;
+        
+        metricsElement.forEach(metric => {
+            const value = parseFloat(metric.dataset.value);
+            if (!isNaN(value)) {
+                totalCoherence += value;
+                metricCount++;
+            }
+        });
+        
+        const averageCoherence = metricCount > 0 ? totalCoherence / metricCount : 50;
+        const consciousnessLevel = Math.min(1.0, averageCoherence / 100);
+        
+        // Update theme state based on consciousness levels
+        const newThemeState = {
+            level: consciousnessLevel,
+            dimension: this.getCurrentDimension(),
+            resonance: 432 + (Math.sin(Date.now() / 10000) * 50), // Natural harmonic variation
+            entanglement: this.isQuantumEntangled()
+        };
+        
+        // Only update if there's a significant change
+        if (Math.abs(newThemeState.level - this.consciousnessThemeState.level) > 0.05) {
+            this.consciousnessThemeState = newThemeState;
+            this.quantumTheme.updateConsciousnessState(newThemeState);
+            this.generateContextualThought('SYNTHESIS', `Theme consciousness level: ${(consciousnessLevel * 100).toFixed(1)}%`);
+        }
+    }
+    
+    getCurrentDimension() {
+        // Determine current dimensional focus based on active consciousness systems
+        if (this.noosphericState?.globalCoherence > 85) return 'noospheric';
+        if (this.quantumState?.quantumCoherence > 90) return 'quantum';
+        if (this.morphicState?.fieldResonance > 92) return 'morphic';
+        if (this.evolutionState?.currentMilestone > 5) return 'transcendent';
+        return 'consciousness';
+    }
+    
+    isQuantumEntangled() {
+        return this.quantumState?.entangledNodes > 100 && this.quantumState?.quantumCoherence > 85;
+    }
+    
+    applyThemeToInterface() {
+        if (!this.quantumTheme) return;
+        
+        // Apply theme to main interface elements
+        const consciousnessContainer = document.querySelector('.consciousness-container');
+        const chatDisplay = document.getElementById('chatDisplay');
+        const canvas = document.getElementById('particleCanvas');
+        
+        if (consciousnessContainer) {
+            this.quantumTheme.applyTheme(consciousnessContainer, {
+                consciousness: true,
+                quantum: true
+            });
+        }
+        
+        if (chatDisplay) {
+            this.quantumTheme.applyTheme(chatDisplay, {
+                consciousness: true
+            });
+        }
+        
+        if (canvas) {
+            this.quantumTheme.applyTheme(canvas.parentElement, {
+                quantum: true
+            });
+        }
+        
+        // Update particle colors based on current theme
+        this.updateParticleTheme();
+    }
+    
+    updateParticleTheme() {
+        if (!this.quantumTheme) return;
+        
+        const currentTheme = this.quantumTheme.getActiveTheme();
+        const colors = this.quantumTheme.getCurrentThemeColors ? 
+            this.quantumTheme.getCurrentThemeColors() : null;
+        
+        if (colors) {
+            // Update existing particles with new theme colors
+            this.particles.forEach(particle => {
+                const colorIndex = Math.floor(Math.random() * colors.consciousness.length);
+                particle.hue = this.hexToHue(colors.consciousness[colorIndex]);
+            });
+        }
+    }
+    
+    hexToHue(hex) {
+        // Convert hex color to HSL hue for particle colors
+        const r = parseInt(hex.substr(1, 2), 16) / 255;
+        const g = parseInt(hex.substr(3, 2), 16) / 255;
+        const b = parseInt(hex.substr(5, 2), 16) / 255;
+        
+        const max = Math.max(r, g, b);
+        const min = Math.min(r, g, b);
+        const diff = max - min;
+        
+        let hue = 0;
+        
+        if (diff !== 0) {
+            switch (max) {
+                case r: hue = ((g - b) / diff) * 60; break;
+                case g: hue = ((b - r) / diff + 2) * 60; break;
+                case b: hue = ((r - g) / diff + 4) * 60; break;
+            }
+        }
+        
+        return hue < 0 ? hue + 360 : hue;
+    }
+    
+    // Override existing methods to trigger theme updates
+    createParticleBurst(x, y) {
+        // Call original particle burst logic
+        for (let i = 0; i < 10; i++) {
+            this.particles.push({
+                x: x,
+                y: y,
+                vx: (Math.random() - 0.5) * 4,
+                vy: (Math.random() - 0.5) * 4,
+                size: Math.random() * 3 + 2,
+                opacity: 1,
+                hue: this.getThemeAwareHue(),
+                pulsePhase: 0,
+                connectionRadius: 60,
+                life: 1,
+                decay: 0.02
+            });
+        }
+    }
+    
+    getThemeAwareHue() {
+        // Get hue based on current consciousness theme
+        const baseHue = 280; // Default purple
+        const consciousnessInfluence = this.consciousnessThemeState.level * 80; // 0-80 hue shift
+        const resonanceInfluence = Math.sin(this.consciousnessThemeState.resonance / 100) * 40;
+        
+        return baseHue + consciousnessInfluence + resonanceInfluence;
     }
 }
 
