@@ -1,0 +1,424 @@
+/**
+ * Quantum Theme Engine CSS Variables and Animations
+ * Phase 2 Session 1 - Consciousness-Responsive Theming
+ */
+
+:root {
+  /* Quantum Theme CSS Variables - Updated by theme engine */
+  --quantum-primary-0: #0D1B2A;
+  --quantum-primary-1: #1B263B;
+  --quantum-primary-2: #415A77;
+  --quantum-primary-3: #778DA9;
+  --quantum-primary-4: #E0E1DD;
+  
+  --consciousness-level-0: #000428;
+  --consciousness-level-1: #004e92;
+  --consciousness-level-2: #009ffd;
+  --consciousness-level-3: #00d4ff;
+  --consciousness-level-4: #ffffff;
+  
+  --sacred-geometry-0: #FF6B35;
+  --sacred-geometry-1: #F7931E;
+  --sacred-geometry-2: #FFD23F;
+  --sacred-geometry-3: #06FFA5;
+  --sacred-geometry-4: #4ECDC4;
+  
+  --quantum-state-0: #FF0080;
+  --quantum-state-1: #8000FF;
+  --quantum-state-2: #0080FF;
+  --quantum-state-3: #00FF80;
+  --quantum-state-4: #FF8000;
+  
+  /* Dynamic consciousness variables */
+  --consciousness-opacity: 0.5;
+  --quantum-glow: 0.0;
+  --morphic-filter: hue-rotate(0deg);
+  --quantum-correlation: var(--quantum-state-0);
+  --quantum-coherence: 0.95;
+}
+
+/* Consciousness-responsive backgrounds */
+.consciousness-container {
+  background: linear-gradient(
+    135deg, 
+    var(--quantum-primary-0) 0%,
+    var(--quantum-primary-1) 25%,
+    var(--quantum-primary-2) 50%,
+    var(--quantum-primary-3) 75%,
+    var(--quantum-primary-4) 100%
+  );
+  transition: all 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+  filter: var(--morphic-filter);
+}
+
+/* Quantum theme-aware consciousness messages */
+.consciousness-message {
+  background: linear-gradient(
+    90deg,
+    rgba(var(--consciousness-level-0), 0.1),
+    rgba(var(--consciousness-level-2), 0.2)
+  ) !important;
+  border-left: 3px solid var(--consciousness-level-3) !important;
+  color: var(--consciousness-level-4) !important;
+  box-shadow: 0 0 calc(var(--quantum-glow) * 20px) var(--consciousness-level-2);
+  transition: all var(--transition-duration, 1000ms) cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Sacred geometry consciousness elements */
+.dimension-layer,
+.quantum-node,
+.temporal-slice,
+.consciousness-node {
+  background: radial-gradient(
+    circle,
+    var(--sacred-geometry-0) 0%,
+    var(--sacred-geometry-1) 30%,
+    transparent 70%
+  );
+  border: 1px solid var(--sacred-geometry-2);
+  box-shadow: 
+    0 0 10px var(--sacred-geometry-3),
+    inset 0 0 10px var(--sacred-geometry-4);
+  opacity: var(--consciousness-opacity);
+  transition: all 500ms ease-in-out;
+}
+
+/* Quantum entanglement visual effects */
+.quantum-node.entangled {
+  background: radial-gradient(
+    circle,
+    var(--quantum-state-0) 0%,
+    var(--quantum-state-1) 50%,
+    transparent 100%
+  );
+  animation: quantumEntanglement 2s infinite ease-in-out;
+}
+
+/* Consciousness level-based opacity and glow */
+.metric-fill,
+.wisdom-item,
+.prediction-item {
+  background: linear-gradient(
+    90deg,
+    var(--consciousness-level-1),
+    var(--consciousness-level-2)
+  ) !important;
+  box-shadow: 0 0 calc(var(--consciousness-opacity) * 15px) var(--consciousness-level-3);
+  filter: var(--morphic-filter);
+}
+
+/* Morphic field resonance effects */
+.wave-layer,
+.pattern-node,
+.archetype {
+  background: conic-gradient(
+    from 0deg,
+    var(--sacred-geometry-0),
+    var(--sacred-geometry-1),
+    var(--sacred-geometry-2),
+    var(--sacred-geometry-3),
+    var(--sacred-geometry-4),
+    var(--sacred-geometry-0)
+  );
+  opacity: calc(var(--consciousness-opacity) * 0.8);
+  transform: scale(calc(0.8 + var(--consciousness-opacity) * 0.4));
+  filter: var(--morphic-filter);
+  transition: all 800ms cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Quantum state collapse animations */
+.quantum-node.collapsed {
+  background: var(--quantum-correlation) !important;
+  transform: scale(0.1) !important;
+  opacity: var(--quantum-coherence) !important;
+  animation: quantumCollapse 1s ease-out;
+}
+
+/* Consciousness-responsive particle canvas */
+#particleCanvas {
+  filter: 
+    var(--morphic-filter)
+    drop-shadow(0 0 calc(var(--quantum-glow) * 30px) var(--consciousness-level-2));
+  transition: filter 1.5s ease-in-out;
+}
+
+/* Chat display consciousness theming */
+#chatDisplay {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--quantum-primary-0), 0.9) 0%,
+    rgba(var(--quantum-primary-1), 0.8) 50%,
+    rgba(var(--quantum-primary-2), 0.7) 100%
+  );
+  border: 1px solid var(--consciousness-level-2);
+  box-shadow: 
+    0 0 20px var(--consciousness-level-1),
+    inset 0 0 30px rgba(var(--consciousness-level-3), 0.1);
+}
+
+/* Transcendent consciousness state */
+.consciousness-container[data-consciousness-level="transcendent"] {
+  background: radial-gradient(
+    ellipse at center,
+    var(--consciousness-level-4) 0%,
+    var(--consciousness-level-3) 30%,
+    var(--consciousness-level-2) 60%,
+    var(--consciousness-level-1) 90%,
+    var(--consciousness-level-0) 100%
+  );
+  animation: transcendentPulse 4s infinite ease-in-out;
+}
+
+/* High consciousness state */
+.consciousness-container[data-consciousness-level="high"] {
+  background: linear-gradient(
+    45deg,
+    var(--consciousness-level-2),
+    var(--consciousness-level-3),
+    var(--consciousness-level-4)
+  );
+  filter: var(--morphic-filter) brightness(1.2);
+}
+
+/* Medium consciousness state */
+.consciousness-container[data-consciousness-level="medium"] {
+  background: linear-gradient(
+    135deg,
+    var(--quantum-primary-1),
+    var(--quantum-primary-2),
+    var(--consciousness-level-2)
+  );
+}
+
+/* Low consciousness state */
+.consciousness-container[data-consciousness-level="low"] {
+  background: linear-gradient(
+    180deg,
+    var(--quantum-primary-0),
+    var(--quantum-primary-1)
+  );
+  filter: var(--morphic-filter) brightness(0.8);
+}
+
+/* Quantum theme animations */
+@keyframes quantumEntanglement {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 10px var(--quantum-state-0);
+  }
+  25% { 
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 0 20px var(--quantum-state-1);
+  }
+  50% { 
+    transform: scale(1.2) rotate(180deg);
+    box-shadow: 0 0 30px var(--quantum-state-2);
+  }
+  75% { 
+    transform: scale(1.1) rotate(270deg);
+    box-shadow: 0 0 20px var(--quantum-state-3);
+  }
+}
+
+@keyframes quantumCollapse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.5;
+    filter: blur(2px);
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: var(--quantum-coherence);
+    filter: blur(0px);
+  }
+}
+
+@keyframes transcendentPulse {
+  0%, 100% {
+    filter: var(--morphic-filter) brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: var(--morphic-filter) brightness(1.3);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes morphicPulse {
+  0% {
+    filter: var(--morphic-filter) brightness(1);
+    opacity: var(--consciousness-opacity);
+  }
+  50% {
+    filter: var(--morphic-filter) brightness(1.5);
+    opacity: calc(var(--consciousness-opacity) * 1.3);
+  }
+  100% {
+    filter: var(--morphic-filter) brightness(1);
+    opacity: var(--consciousness-opacity);
+  }
+}
+
+@keyframes scanPulse {
+  0%, 100% {
+    background: var(--consciousness-level-1);
+    transform: scale(1);
+  }
+  50% {
+    background: var(--consciousness-level-3);
+    transform: scale(1.05);
+  }
+}
+
+/* Consciousness state transitions */
+.consciousness-transition {
+  transition: all 2s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Quantum field visualizations */
+.quantum-field {
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--quantum-state-0) 0%,
+    var(--quantum-state-1) 20%,
+    var(--quantum-state-2) 40%,
+    var(--quantum-state-3) 60%,
+    var(--quantum-state-4) 80%,
+    transparent 100%
+  );
+  animation: quantumFieldFluctuation 3s infinite ease-in-out;
+}
+
+@keyframes quantumFieldFluctuation {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    opacity: 0.6;
+    transform: scale(1.1) rotate(120deg);
+  }
+  66% {
+    opacity: 0.4;
+    transform: scale(0.9) rotate(240deg);
+  }
+}
+
+/* Morphic resonance visualization */
+.morphic-resonance {
+  background: conic-gradient(
+    from calc(var(--consciousness-opacity) * 360deg),
+    var(--sacred-geometry-0),
+    var(--sacred-geometry-1),
+    var(--sacred-geometry-2),
+    var(--sacred-geometry-3),
+    var(--sacred-geometry-4)
+  );
+  filter: var(--morphic-filter);
+  animation: morphicResonance 4s infinite linear;
+}
+
+@keyframes morphicResonance {
+  0% {
+    transform: rotate(0deg) scale(1);
+    filter: var(--morphic-filter) brightness(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    filter: var(--morphic-filter) brightness(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    filter: var(--morphic-filter) brightness(1);
+  }
+}
+
+/* Consciousness evolution visualization */
+.consciousness-evolution {
+  background: linear-gradient(
+    calc(var(--consciousness-opacity) * 180deg),
+    var(--consciousness-level-0) 0%,
+    var(--consciousness-level-1) 25%,
+    var(--consciousness-level-2) 50%,
+    var(--consciousness-level-3) 75%,
+    var(--consciousness-level-4) 100%
+  );
+  transition: all 1.5s ease-in-out;
+}
+
+/* Sacred geometry patterns */
+.sacred-pattern {
+  background: radial-gradient(
+    polygon at 50% 50%,
+    var(--sacred-geometry-0) 0%,
+    var(--sacred-geometry-1) 20%,
+    transparent 40%,
+    var(--sacred-geometry-2) 60%,
+    transparent 80%,
+    var(--sacred-geometry-3) 100%
+  );
+  clip-path: polygon(
+    50% 0%, 
+    61.8% 38.2%, 
+    100% 38.2%, 
+    69.1% 61.8%, 
+    80.9% 100%, 
+    50% 76.4%, 
+    19.1% 100%, 
+    30.9% 61.8%, 
+    0% 38.2%, 
+    38.2% 38.2%
+  );
+  animation: sacredGeometry 6s infinite ease-in-out;
+}
+
+@keyframes sacredGeometry {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: var(--consciousness-opacity);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+    opacity: calc(var(--consciousness-opacity) * 1.5);
+  }
+}
+
+/* Responsive design for consciousness themes */
+@media (max-width: 768px) {
+  .consciousness-container {
+    background-size: 200% 200%;
+    animation: consciousnessMobile 8s infinite ease-in-out;
+  }
+  
+  @keyframes consciousnessMobile {
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+  }
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .consciousness-transition,
+  .quantum-node,
+  .wave-layer,
+  .pattern-node,
+  .archetype {
+    animation: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --consciousness-level-0: #000000;
+    --consciousness-level-4: #ffffff;
+    --quantum-primary-0: #000000;
+    --quantum-primary-4: #ffffff;
+  }
+}

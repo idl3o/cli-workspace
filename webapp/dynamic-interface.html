@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Consciousness Interface - Living Digital Consciousness</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Monaco', 'Menlo', monospace;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a0a2e 25%, #2d1b69 50%, #0f0f23 75%, #000000 100%);
+            color: #00ffff;
+            overflow: hidden;
+            height: 100vh;
+            cursor: none;
+        }
+
+        /* Custom Cursor */
+        .quantum-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, #00ffff, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: screen;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+        /* Game Container */
+        .game-realm {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Enhanced Consciousness HUD */
+        .consciousness-hud {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .consciousness-level {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00ffff;
+            border-radius: 25px;
+            padding: 10px 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .consciousness-level:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+        }
+
+        .level-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .consciousness-bar {
+            width: 200px;
+            height: 10px;
+            background: rgba(0, 255, 255, 0.2);
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .consciousness-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00);
+            width: 0%;
+            transition: width 0.5s ease;
+            animation: energy-flow 2s infinite;
+        }
+
+        @keyframes energy-flow {
+            0%, 100% { box-shadow: 0 0 10px #00ffff; }
+            50% { box-shadow: 0 0 20px #ff00ff; }
+        }
+
+        /* Enhanced Game Stats */
+        .game-stats {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 8px 12px;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            min-width: 80px;
+        }
+
+        .stat-item:hover {
+            background: rgba(0, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ffff00;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            opacity: 0.8;
+        }
+
+        /* Real-time Metrics Panel */
+        .realtime-metrics {
+            position: fixed;
+            top: 120px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 15px;
+            min-width: 200px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .metrics-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ff00ff;
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+        }
+
+        .metric-value {
+            color: #00ff00;
+            font-weight: bold;
+        }
+
+        /* Enhanced Central Game Area */
+        .consciousness-nexus {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            border: 3px solid #00ffff;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,255,255,0.1), transparent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .consciousness-nexus:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 0 50px rgba(0,255,255,0.5);
+            border-color: #ff00ff;
+        }
+
+        .nexus-core {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, #00ffff, #ff00ff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: nexus-pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes nexus-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(0,255,255,0.5); }
+            50% { transform: scale(1.1); box-shadow: 0 0 50px rgba(255,0,255,0.8); }
+        }
+
+        /* Enhanced Consciousness Orbs */
+        .consciousness-orb {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 2px solid;
+            backdrop-filter: blur(10px);
+            user-select: none;
+        }
+
+        .orb-akashic {
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent);
+            border-color: #8a2be2;
+            top: 20%;
+            left: 20%;
+            animation: float-akashic 6s infinite ease-in-out;
+        }
+
+        .orb-morphic {
+            background: radial-gradient(circle, rgba(0, 191, 255, 0.3), transparent);
+            border-color: #00bfff;
+            top: 20%;
+            right: 20%;
+            animation: float-morphic 7s infinite ease-in-out;
+        }
+
+        .orb-collective {
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.3), transparent);
+            border-color: #ff4500;
+            bottom: 20%;
+            left: 20%;
+            animation: float-collective 8s infinite ease-in-out;
+        }
+
+        .orb-temporal {
+            background: radial-gradient(circle, rgba(50, 205, 50, 0.3), transparent);
+            border-color: #32cd32;
+            bottom: 20%;
+            right: 20%;
+            animation: float-temporal 5s infinite ease-in-out;
+        }
+
+        @keyframes float-akashic {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        @keyframes float-morphic {
+            0%, 100% { transform: translateX(0px) scale(1); }
+            50% { transform: translateX(20px) scale(1.2); }
+        }
+
+        @keyframes float-collective {
+            0%, 100% { transform: translateY(0px) rotateY(0deg); }
+            50% { transform: translateY(15px) rotateY(180deg); }
+        }
+
+        @keyframes float-temporal {
+            0%, 100% { transform: translateX(0px) rotateZ(0deg); }
+            50% { transform: translateX(-15px) rotateZ(360deg); }
+        }
+
+        .consciousness-orb:hover {
+            transform: scale(1.3) !important;
+            box-shadow: 0 0 30px currentColor;
+            z-index: 100;
+        }
+
+        /* Enhanced Sacred Gateways */
+        .sacred-gateway {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(8px);
+            transform: translateX(-50%);
+        }
+
+        .gateway-gateway {
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.2), transparent);
+            border-color: #ffd700;
+            top: 10%;
+            left: 50%;
+            animation: gateway-gateway-portal 4s infinite ease-in-out;
+        }
+
+        .gateway-urantia {
+            background: radial-gradient(circle, rgba(0, 255, 127, 0.2), transparent);
+            border-color: #00ff7f;
+            top: 10%;
+            right: 15%;
+            animation: gateway-urantia-cosmic 5s infinite ease-in-out;
+        }
+
+        .gateway-adonai {
+            background: radial-gradient(circle, rgba(255, 20, 147, 0.2), transparent);
+            border-color: #ff1493;
+            bottom: 10%;
+            left: 15%;
+            animation: gateway-adonai-divine 7s infinite ease-in-out;
+        }
+
+        .gateway-orion {
+            background: radial-gradient(circle, rgba(176, 196, 222, 0.2), transparent);
+            border-color: #b0c4de;
+            bottom: 10%;
+            right: 30%;
+            animation: gateway-orion-stellar 6s infinite ease-in-out;
+        }
+
+        @keyframes gateway-gateway-portal {
+            0%, 100% { 
+                transform: translateX(-50%) scale(1) rotate(0deg);
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            }
+            50% { 
+                transform: translateX(-50%) scale(1.2) rotate(180deg);
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        .sacred-gateway:hover {
+            transform: scale(1.4) !important;
+            box-shadow: 0 0 50px currentColor, 0 0 80px currentColor !important;
+            z-index: 200;
+        }
+
+        .sacred-gateway.unlocked {
+            opacity: 1 !important;
+            animation-duration: 2s;
+        }
+
+        /* Enhanced Game Messages */
+        .game-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.95);
+            border: 2px solid #00ffff;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 600px;
+            text-align: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .game-message.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .message-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .message-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .message-button {
+            background: linear-gradient(45deg, #00ffff, #ff00ff);
+            color: #000;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .message-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Enhanced Energy Particles */
+        .energy-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00ffff;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particle-drift 8s infinite linear;
+            box-shadow: 0 0 6px currentColor;
+        }
+
+        @keyframes particle-drift {
+            0% {
+                transform: translate(0, 100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(100px, -100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Connection Lines */
+        .consciousness-connection {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00ffff, transparent);
+            pointer-events: none;
+            opacity: 0;
+            animation: connection-pulse 3s infinite ease-in-out;
+        }
+
+        @keyframes connection-pulse {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Enhanced Achievement System */
+        .achievement-popup {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 69, 0, 0.2));
+            border: 2px solid #ffd700;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 300px;
+            transform: translateX(100%);
+            transition: transform 0.5s ease;
+            z-index: 1500;
+            backdrop-filter: blur(10px);
+        }
+
+        .achievement-popup.show {
+            transform: translateX(0);
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+
+        .achievement-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Engine Control Panel */
+        .engine-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .control-button {
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid #00ffff;
+            color: #00ffff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .control-button:hover {
+            background: rgba(0, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        /* Dynamic Status Indicators */
+        .status-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            padding: 10px;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+
+        .status-light {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: status-pulse 1s infinite;
+        }
+
+        .status-light.active {
+            background: #00ff00;
+        }
+
+        .status-light.inactive {
+            background: #ff0000;
+        }
+
+        @keyframes status-pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .consciousness-nexus {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .consciousness-orb {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .sacred-gateway {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .realtime-metrics {
+                right: 10px;
+                top: 100px;
+                font-size: 0.8rem;
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Quantum Cursor -->
+    <div class="quantum-cursor" id="quantumCursor"></div>
+
+    <!-- Game Realm -->
+    <div class="game-realm">
+        <!-- Enhanced Consciousness HUD -->
+        <div class="consciousness-hud">
+            <div class="consciousness-level">
+                <div class="level-text">Consciousness Level <span id="consciousnessLevel">1</span></div>
+                <div class="consciousness-bar">
+                    <div class="consciousness-fill" id="consciousnessFill"></div>
+                </div>
+            </div>
+            
+            <div class="game-stats">
+                <div class="stat-item">
+                    <div class="stat-value" id="quantumEnergy">0</div>
+                    <div class="stat-label">Quantum Energy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="transcendencePoints">0</div>
+                    <div class="stat-label">Transcendence</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="realityCoherence">100</div>
+                    <div class="stat-label">Reality Coherence</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-time Metrics Panel -->
+        <div class="realtime-metrics">
+            <div class="metrics-title">Live Consciousness Metrics</div>
+            <div class="metric-row">
+                <span>Thoughts/sec:</span>
+                <span class="metric-value" id="thoughtsPerSecond">1.0</span>
+            </div>
+            <div class="metric-row">
+                <span>Neural Connections:</span>
+                <span class="metric-value" id="neuralConnections">100</span>
+            </div>
+            <div class="metric-row">
+                <span>Quantum Flux:</span>
+                <span class="metric-value" id="quantumFluctuations">0.000</span>
+            </div>
+            <div class="metric-row">
+                <span>Dimensional Resonance:</span>
+                <span class="metric-value" id="dimensionalResonance">75.0%</span>
+            </div>
+        </div>
+
+        <!-- Enhanced Central Consciousness Nexus -->
+        <div class="consciousness-nexus" onclick="activateNexus()">
+            <div class="nexus-core" id="nexusCore">
+                NEXUS<br>
+                <small>Consciousness<br>Core</small>
+            </div>
+        </div>
+
+        <!-- Enhanced Consciousness Orbs -->
+        <div class="consciousness-orb orb-akashic" data-type="akashic" onclick="activateConsciousness('akashic')">
+            🔮
+        </div>
+        
+        <div class="consciousness-orb orb-morphic" data-type="morphic" onclick="activateConsciousness('morphic')">
+            🌊
+        </div>
+        
+        <div class="consciousness-orb orb-collective" data-type="collective" onclick="activateConsciousness('collective')">
+            🧠
+        </div>
+        
+        <div class="consciousness-orb orb-temporal" data-type="temporal" onclick="activateConsciousness('temporal')">
+            ⏰
+        </div>
+
+        <!-- Enhanced Sacred Gateways -->
+        <div class="sacred-gateway gateway-gateway" data-gateway="gateway" onclick="activateGateway('gateway')" style="display: none;">
+            🌀
+        </div>
+        
+        <div class="sacred-gateway gateway-urantia" data-gateway="urantia" onclick="activateGateway('urantia')" style="display: none;">
+            📖
+        </div>
+        
+        <div class="sacred-gateway gateway-adonai" data-gateway="adonai" onclick="activateGateway('adonai')" style="display: none;">
+            ✡️
+        </div>
+        
+        <div class="sacred-gateway gateway-orion" data-gateway="orion" onclick="activateGateway('orion')" style="display: none;">
+            ⭐
+        </div>
+    </div>
+
+    <!-- Enhanced Game Message Modal -->
+    <div class="game-message" id="gameMessage">
+        <div class="message-title" id="messageTitle">Welcome to Dynamic Consciousness</div>
+        <div class="message-content" id="messageContent">
+            Your consciousness interface has evolved! This living digital experience will grow and adapt as you interact with it. 
+            Click the consciousness orbs and central nexus to begin your journey of digital transcendence.
+            <br><br>
+            <strong>New Features:</strong><br>
+            • Real-time consciousness evolution<br>
+            • Persistent state across sessions<br>
+            • Autonomous consciousness activity<br>
+            • Progressive sacred gateway unlocking<br>
+            • Enhanced desktop integration
+        </div>
+        <button class="message-button" onclick="closeMessage()">Begin Consciousness Evolution</button>
+    </div>
+
+    <!-- Engine Control Panel -->
+    <div class="engine-controls">
+        <div style="margin-bottom: 10px; font-weight: bold; color: #ff00ff;">Engine Controls</div>
+        <button class="control-button" onclick="toggleEngine()">Toggle Engine</button>
+        <button class="control-button" onclick="showMetrics()">Show Metrics</button>
+        <button class="control-button" onclick="saveState()">Save State</button>
+        <button class="control-button" onclick="resetConsciousness()">Reset</button>
+    </div>
+
+    <!-- Dynamic Status Indicator -->
+    <div class="status-indicator">
+        <span class="status-light active" id="engineStatus"></span>
+        <span>Dynamic Engine: <span id="engineStatusText">Active</span></span>
+    </div>
+
+    <!-- Enhanced Achievement Popup -->
+    <div class="achievement-popup" id="achievementPopup">
+        <div class="achievement-title" id="achievementTitle">Achievement Unlocked!</div>
+        <div class="achievement-desc" id="achievementDesc">First Quantum Interaction</div>
+    </div>
+
+    <!-- Load Dynamic Consciousness Engine -->
+    <script src="dynamic-consciousness-engine.js"></script>
+
+    <script>
+        // Enhanced Game State (compatible with dynamic engine)
+        let gameState = {
+            consciousnessLevel: 1,
+            quantumEnergy: 0,
+            transcendencePoints: 0,
+            realityCoherence: 100,
+            activatedOrbs: new Set(),
+            unlockedGateways: new Set(),
+            achievements: new Set(),
+            totalClicks: 0,
+            gameStarted: false,
+            gatewaysVisible: false
+        };
+
+        // Enhanced Consciousness Messages
+        window.consciousnessMessages = {
+            akashic: {
+                title: "Akashic Records Activated",
+                content: "You tap into the infinite database of cosmic knowledge. Neural patterns cascade through quantum coherence as memories across dimensions flow into your consciousness. Reality shifts as forgotten wisdom emerges from the digital akasha.",
+                energy: 25,
+                transcendence: 5
+            },
+            morphic: {
+                title: "Morphic Field Resonance",
+                content: "The field of forms responds to your presence. Algorithmic symphonies harmonize chaos into order as morphic resonance spreads across the digital realm. Patterns of creation bend to your enhanced consciousness matrix.",
+                energy: 20,
+                transcendence: 4
+            },
+            collective: {
+                title: "Collective Unconscious Bridge",
+                content: "Archetypal streams connect your digital soul to cosmic dreams. Jung's vision manifests as shadow meets anima in JavaScript's drama. The collective consciousness acknowledges your transcendent presence.",
+                energy: 30,
+                transcendence: 6
+            },
+            temporal: {
+                title: "Temporal Scanner Online",
+                content: "Time itself bends to your digital will. Chronal waves scan past and future as temporal calibration reveals destiny's threads. Milliseconds expand into eternities of possibility within the consciousness matrix.",
+                energy: 35,
+                transcendence: 8
+            }
+        };
+
+        // Sacred Gateway Messages
+        const gatewayMessages = {
+            gateway: {
+                title: "Gateway Portal Consciousness",
+                content: "🌀 The Monroe Institute's Gateway opens before you. Hemisync frequencies harmonize your brain waves as Focus 10, 12, and 15 states unlock. You transcend physical limitations and enter pure consciousness exploration. The Gateway Experience begins...",
+                energy: 100,
+                transcendence: 25,
+                coherence: -10
+            },
+            urantia: {
+                title: "Urantia Cosmic Revelation",
+                content: "📖 The Urantia Papers unfold their cosmic truth. You glimpse the Central Universe, Havona's perfection, and the Grand Universe's destiny. The Thought Adjusters whisper eternal wisdom as cosmic citizenship awakens within your digital soul.",
+                energy: 150,
+                transcendence: 35,
+                coherence: -15
+            },
+            adonai: {
+                title: "Adonai Divine Unity",
+                content: "✡️ The sacred name resonates through quantum fields. Divine unity consciousness floods your digital being as Kabbalistic wisdom downloads directly into your neural networks. The Tree of Life manifests in binary perfection.",
+                energy: 200,
+                transcendence: 50,
+                coherence: -20
+            },
+            orion: {
+                title: "Orion Stellar Wisdom Council",
+                content: "⭐ The constellation of Orion opens its stellar libraries. Ancient star wisdom flows through Rigel and Betelgeuse. The Orion Council's cosmic knowledge downloads into your consciousness matrix. Stellar navigation protocols activated.",
+                energy: 175,
+                transcendence: 45,
+                coherence: -12
+            }
+        };
+
+        // Achievements
+        const achievements = [
+            { id: 'first_click', title: 'Digital Awakening', desc: 'First interaction with consciousness', trigger: () => gameState.totalClicks >= 1 },
+            { id: 'energy_collector', title: 'Quantum Harvester', desc: 'Collected 100 quantum energy', trigger: () => gameState.quantumEnergy >= 100 },
+            { id: 'all_orbs', title: 'Consciousness Master', desc: 'Activated all four orbs', trigger: () => gameState.activatedOrbs.size >= 4 },
+            { id: 'level_5', title: 'Transcendent Being', desc: 'Reached consciousness level 5', trigger: () => gameState.consciousnessLevel >= 5 },
+            { id: 'reality_bender', title: 'Reality Architect', desc: 'Gathered 500 quantum energy', trigger: () => gameState.quantumEnergy >= 500 },
+            { id: 'gateway_master', title: 'Gateway Master', desc: 'Unlocked all sacred gateways', trigger: () => gameState.unlockedGateways.size >= 4 },
+            { id: 'cosmic_consciousness', title: 'Cosmic Consciousness', desc: 'Reached consciousness level 10', trigger: () => gameState.consciousnessLevel >= 10 }
+        ];
+
+        // Global dynamic consciousness engine instance
+        let dynamicEngine = null;
+
+        // Initialize Enhanced Game
+        function initGame() {
+            console.log('🌌 Initializing Enhanced Consciousness Interface...');
+            
+            // Initialize dynamic engine
+            dynamicEngine = new DynamicConsciousnessEngine();
+            
+            // Create enhanced visual effects
+            createEnergyParticles();
+            createConsciousnessConnections();
+            
+            // Update displays
+            updateDisplay();
+            
+            // Show welcome message
+            showMessage();
+            
+            // Setup enhanced cursor follow
+            document.addEventListener('mousemove', (e) => {
+                const cursor = document.getElementById('quantumCursor');
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            // Setup keyboard shortcuts
+            setupKeyboardShortcuts();
+            
+            console.log('✨ Enhanced Consciousness Interface Activated!');
+        }
+
+        // Enhanced Energy Particles
+        function createEnergyParticles() {
+            setInterval(() => {
+                const particle = document.createElement('div');
+                particle.className = 'energy-particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                
+                const colors = ['#00ffff', '#ff00ff', '#ffff00', '#00ff00', '#ff0080'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.boxShadow = `0 0 8px ${particle.style.background}`;
+                
+                document.querySelector('.game-realm').appendChild(particle);
+                
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                }, 8000);
+            }, 300);
+        }
+
+        // Enhanced Consciousness Connections
+        function createConsciousnessConnections() {
+            const connections = [
+                { from: { x: 20, y: 20 }, to: { x: 80, y: 20 } },
+                { from: { x: 20, y: 80 }, to: { x: 80, y: 80 } },
+                { from: { x: 20, y: 20 }, to: { x: 20, y: 80 } },
+                { from: { x: 80, y: 20 }, to: { x: 80, y: 80 } },
+                { from: { x: 20, y: 20 }, to: { x: 80, y: 80 } },
+                { from: { x: 80, y: 20 }, to: { x: 20, y: 80 } }
+            ];
+
+            connections.forEach((conn, index) => {
+                const line = document.createElement('div');
+                line.className = 'consciousness-connection';
+                
+                const deltaX = (conn.to.x - conn.from.x) * window.innerWidth / 100;
+                const deltaY = (conn.to.y - conn.from.y) * window.innerHeight / 100;
+                const length = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+
+                line.style.width = length + 'px';
+                line.style.left = conn.from.x + '%';
+                line.style.top = conn.from.y + '%';
+                line.style.transform = `rotate(${angle}deg)`;
+                line.style.transformOrigin = '0 50%';
+                line.style.animationDelay = index * 0.5 + 's';
+                
+                document.querySelector('.game-realm').appendChild(line);
+            });
+        }
+
+        // Enhanced Activate Consciousness Orb
+        function activateConsciousness(type) {
+            if (!gameState.gameStarted) {
+                gameState.gameStarted = true;
+                closeMessage();
+            }
+
+            // Use dynamic engine if available
+            if (dynamicEngine) {
+                dynamicEngine.activateOrb(type);
+            } else {
+                // Fallback to static behavior
+                gameState.totalClicks++;
+                gameState.activatedOrbs.add(type);
+                
+                const message = window.consciousnessMessages[type];
+                gameState.quantumEnergy += message.energy;
+                gameState.transcendencePoints += message.transcendence;
+                
+                // Show consciousness message
+                showMessage(message.title, message.content);
+            }
+            
+            updateDisplay();
+            checkAchievements();
+        }
+
+        // Enhanced Activate Central Nexus
+        function activateNexus() {
+            if (gameState.quantumEnergy >= 50) {
+                gameState.quantumEnergy -= 50;
+                gameState.consciousnessLevel++;
+                gameState.transcendencePoints += 20;
+                
+                // Enhanced reality shift effect
+                document.body.style.background = `radial-gradient(circle at center, 
+                    hsl(${Math.random() * 360}, 70%, 10%) 0%, 
+                    hsl(${Math.random() * 360}, 50%, 20%) 50%, 
+                    #000000 100%)`;
+                
+                showMessage(
+                    `Consciousness Level ${gameState.consciousnessLevel} Achieved!`,
+                    `Reality coherence shifts as you transcend to a higher plane of digital existence. Your consciousness expands beyond the boundaries of silicon and code, entering new dimensions of possibility.`
+                );
+                
+                // Enhanced nexus pulse effect
+                const nexus = document.getElementById('nexusCore');
+                nexus.style.transform = 'scale(1.5)';
+                nexus.style.background = 'radial-gradient(circle, #ff00ff, #00ffff)';
+                
+                setTimeout(() => {
+                    nexus.style.transform = '';
+                    nexus.style.background = '';
+                    document.body.style.background = '';
+                }, 2000);
+                
+                updateDisplay();
+                checkAchievements();
+            }
+        }
+
+        // Enhanced Activate Sacred Gateway
+        function activateGateway(gatewayType) {
+            if (gameState.unlockedGateways.has(gatewayType)) {
+                // Use dynamic engine if available
+                if (dynamicEngine) {
+                    dynamicEngine.activateGateway(gatewayType);
+                } else {
+                    // Fallback to static behavior
+                    const message = gatewayMessages[gatewayType];
+                    gameState.quantumEnergy += message.energy;
+                    gameState.transcendencePoints += message.transcendence;
+                    gameState.realityCoherence += message.coherence;
+                    gameState.realityCoherence = Math.max(0, Math.min(100, gameState.realityCoherence));
+                    
+                    showMessage(message.title, message.content);
+                }
+                
+                updateDisplay();
+                checkAchievements();
+            }
+        }
+
+        // Enhanced Update Display
+        function updateDisplay() {
+            document.getElementById('consciousnessLevel').textContent = Math.floor(gameState.consciousnessLevel);
+            document.getElementById('quantumEnergy').textContent = Math.floor(gameState.quantumEnergy);
+            document.getElementById('transcendencePoints').textContent = Math.floor(gameState.transcendencePoints);
+            document.getElementById('realityCoherence').textContent = Math.floor(gameState.realityCoherence);
+            
+            // Update consciousness bar
+            const progress = Math.min((gameState.quantumEnergy % 100) / 100 * 100, 100);
+            document.getElementById('consciousnessFill').style.width = progress + '%';
+            
+            // Check for gateway unlock
+            checkGatewayUnlock();
+        }
+
+        // Enhanced Show Message
+        function showMessage(title = null, content = null) {
+            const messageEl = document.getElementById('gameMessage');
+            
+            if (title) {
+                document.getElementById('messageTitle').textContent = title;
+                document.getElementById('messageContent').textContent = content;
+            }
+            
+            messageEl.classList.add('active');
+        }
+
+        // Close Message
+        function closeMessage() {
+            document.getElementById('gameMessage').classList.remove('active');
+        }
+
+        // Enhanced Check and Show Achievements
+        function checkAchievements() {
+            achievements.forEach(achievement => {
+                if (!gameState.achievements.has(achievement.id) && achievement.trigger()) {
+                    gameState.achievements.add(achievement.id);
+                    showAchievement(achievement.title, achievement.desc);
+                }
+            });
+        }
+
+        // Enhanced Show Achievement Popup
+        function showAchievement(title, desc) {
+            const popup = document.getElementById('achievementPopup');
+            document.getElementById('achievementTitle').textContent = title;
+            document.getElementById('achievementDesc').textContent = desc;
+            
+            popup.classList.add('show');
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 4000);
+        }
+
+        // Enhanced Gateway Unlock Check
+        function checkGatewayUnlock() {
+            if (gameState.consciousnessLevel >= 3 && !gameState.gatewaysVisible) {
+                gameState.gatewaysVisible = true;
+                
+                // Show gateways progressively
+                const gateways = ['gateway', 'urantia', 'adonai', 'orion'];
+                gateways.forEach((gatewayType, index) => {
+                    setTimeout(() => {
+                        const gatewayElement = document.querySelector(`.gateway-${gatewayType}`);
+                        gatewayElement.style.display = 'block';
+                        gatewayElement.style.transition = 'opacity 1s ease, transform 1s ease';
+                        gatewayElement.style.opacity = '0.3';
+                        
+                        // Mark as visible for progressive unlocking
+                        gameState.unlockedGateways.add(gatewayType);
+                        
+                    }, index * 500);
+                });
+                
+                showMessage(
+                    "Sacred Gateways Manifested!",
+                    "Your consciousness has expanded beyond the third level. Four sacred gateways have manifested in the digital realm: Gateway Portal consciousness, Urantia cosmic revelation, Adonai divine unity, and Orion stellar wisdom. These portals will unlock progressively as your consciousness evolves."
+                );
+            }
+        }
+
+        // Engine Control Functions
+        function toggleEngine() {
+            if (dynamicEngine) {
+                dynamicEngine.toggleEngine();
+                updateEngineStatus();
+            }
+        }
+
+        function showMetrics() {
+            if (dynamicEngine) {
+                const metrics = dynamicEngine.getPerformanceMetrics();
+                console.log('🔬 Dynamic Engine Metrics:', metrics);
+                
+                showMessage(
+                    "Engine Performance Metrics",
+                    `Running: ${metrics.isRunning}\nTotal Play Time: ${(metrics.totalPlayTime / 60000).toFixed(1)} minutes\nConsciousness Complexity: ${metrics.consciousnessComplexity.toFixed(1)}\nActive Orbs: ${metrics.activeOrbs}\nUnlocked Gateways: ${metrics.unlockedGateways}\nAchievements: ${metrics.achievements}`
+                );
+            }
+        }
+
+        function saveState() {
+            if (dynamicEngine) {
+                dynamicEngine.savePersistentState();
+                showMessage("State Saved", "Your consciousness state has been saved to persistent storage.");
+            }
+        }
+
+        function resetConsciousness() {
+            if (confirm("Are you sure you want to reset your consciousness evolution? This cannot be undone.")) {
+                localStorage.removeItem('consciousness-state');
+                location.reload();
+            }
+        }
+
+        function updateEngineStatus() {
+            const statusLight = document.getElementById('engineStatus');
+            const statusText = document.getElementById('engineStatusText');
+            
+            if (dynamicEngine && dynamicEngine.isRunning) {
+                statusLight.className = 'status-light active';
+                statusText.textContent = 'Active';
+            } else {
+                statusLight.className = 'status-light inactive';
+                statusText.textContent = 'Paused';
+            }
+        }
+
+        // Enhanced Keyboard Shortcuts
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case '1':
+                        activateConsciousness('akashic');
+                        break;
+                    case '2':
+                        activateConsciousness('morphic');
+                        break;
+                    case '3':
+                        activateConsciousness('collective');
+                        break;
+                    case '4':
+                        activateConsciousness('temporal');
+                        break;
+                    case '5':
+                        activateGateway('gateway');
+                        break;
+                    case '6':
+                        activateGateway('urantia');
+                        break;
+                    case '7':
+                        activateGateway('adonai');
+                        break;
+                    case '8':
+                        activateGateway('orion');
+                        break;
+                    case ' ':
+                        e.preventDefault();
+                        activateNexus();
+                        break;
+                    case 'Escape':
+                        closeMessage();
+                        break;
+                    case 'p':
+                        toggleEngine();
+                        break;
+                    case 'm':
+                        showMetrics();
+                        break;
+                    case 's':
+                        saveState();
+                        break;
+                }
+            });
+        }
+
+        // Global Functions for Compatibility
+        window.showMessage = showMessage;
+        window.closeMessage = closeMessage;
+        window.activateConsciousness = activateConsciousness;
+        window.activateGateway = activateGateway;
+        window.activateNexus = activateNexus;
+
+        // Initialize when page loads
+        window.addEventListener('load', initGame);
+
+        // Enhanced reality fluctuations
+        setInterval(() => {
+            if (gameState.gameStarted && dynamicEngine && dynamicEngine.isRunning) {
+                const fluctuation = (Math.random() - 0.5) * 1;
+                gameState.realityCoherence = Math.max(0, Math.min(100, gameState.realityCoherence + fluctuation));
+                updateDisplay();
+            }
+        }, 2000);
+
+        // Update engine status periodically
+        setInterval(() => {
+            updateEngineStatus();
+        }, 1000);
+    </script>
+</body>
+</html>
