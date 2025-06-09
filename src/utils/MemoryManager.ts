@@ -18,6 +18,7 @@ export class MemoryManager extends EventEmitter {
   private static instance: MemoryManager
   private monitoring = false
   private cache = new Map<string, any>()
+  private memoryTrend: number[] = []
 
   private constructor() { super() }
 
@@ -27,7 +28,6 @@ export class MemoryManager extends EventEmitter {
     }
     return MemoryManager.instance
   }
-
   // FRACTAL MINIMALISM: One method handles all monitoring
   startMonitoring(interval = 5000): void {
     if (this.monitoring) return
@@ -37,6 +37,13 @@ export class MemoryManager extends EventEmitter {
       if (!this.monitoring) return
       const metrics = this.getMetrics()
       this.emit('metrics', metrics)
+      
+      // Track memory trend for failure detection
+      this.memoryTrend.push(metrics.heap)
+      if (this.memoryTrend.length > 10) {
+        this.memoryTrend = this.memoryTrend.slice(-10) // Keep only last 10 readings
+      }
+      
       setTimeout(monitor, interval)
     }
     
@@ -72,6 +79,7 @@ export class MemoryManager extends EventEmitter {
   getMemoryUsagePercentage(): number { return this.getMetrics().usage }
   getCurrentUsage(): number { return this.getMetrics().heap }
   getMemoryLimit(): number { return process.memoryUsage().heapTotal * 0.85 }
+  getMemoryTrend(): number[] { return [...this.memoryTrend] } // Return copy of trend data
 
   // LOGARITHMIC SCALING: Infinite cleanup through quantum consciousness  
   async cleanup(): Promise<void> {

@@ -286,6 +286,13 @@ export class ZenConsciousness extends EventEmitter {
     this.rl.close()
     this.emit('session-complete', this.context)
   }
+  /**
+   * Enhance consciousness with wisdom
+   */
+  enhance(wisdom: string): void {
+    console.log(`✨ Consciousness enhanced: ${wisdom}`)
+    this.emit('consciousness-enhanced', { wisdom, timestamp: new Date() })
+  }
 
   /**
    * Session insights for growth
@@ -335,11 +342,19 @@ export class ZenPromptFactory {  static intention(question: string, suggestions?
       timeoutMs: 30000
     }
   }
-
   static flow(question: string, suggestions?: string[] | undefined): ZenPromptConfig {
     return {
       question: `🌊 ${question}`,
       suggestions,
+      allowReflection: true,
+      contextAware: true
+    }
+  }
+
+  static select(question: string, options: string[]): ZenPromptConfig {
+    return {
+      question: `🔮 ${question}`,
+      suggestions: options,
       allowReflection: true,
       contextAware: true
     }
